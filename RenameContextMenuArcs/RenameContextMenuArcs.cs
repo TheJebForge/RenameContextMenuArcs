@@ -19,10 +19,6 @@ namespace RenameContextMenuArcs
         public override void OnEngineInit() {
             Harmony harmony = new Harmony($"net.{Author}.{Name}");
             harmony.PatchAll();
-
-            LocaleString str = (LocaleString)"a";
-
-            str.ToString();
         }
 
         public static void SetName(UIBuilder ui, ArcData data) {
@@ -56,14 +52,7 @@ namespace RenameContextMenuArcs
                             new CodeInstruction(OpCodes.Ldarg_0),
                             new CodeInstruction(OpCodes.Ldloc_0),
                             new CodeInstruction(OpCodes.Call, method)
-                        }
-                        );
-                    for (int i = 0; i < startIndex + 5; i++) {
-                        Msg($"{codes[i]} - {codes[i].operand}");
-                        if (codes[i].operand != null) {
-                            Msg($"Type - {codes[i].operand.GetType()}");
-                        }
-                    }
+                        });
                     Msg("Patched");
                 }
 
