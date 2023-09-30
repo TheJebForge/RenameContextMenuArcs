@@ -1,20 +1,19 @@
 ﻿using HarmonyLib;
-using NeosModLoader;
 using FrooxEngine;
 using FrooxEngine.UIX;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using ResoniteModLoader;
 
 namespace RenameContextMenuArcs
 {
-    public class RenameContextMenuArcs : NeosMod
+    public class RenameContextMenuArcs : ResoniteMod
     {
         public override string Name => "RenameContextMenuArcs";
         public override string Author => "TheJebForge";
-        public override string Version => "1.0.0";
+        public override string Version => "1.1.0";
 
         public override void OnEngineInit() {
             Harmony harmony = new Harmony($"net.{Author}.{Name}");
